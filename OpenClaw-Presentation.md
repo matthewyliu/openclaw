@@ -5,36 +5,79 @@ paginate: true
 size: 16:9
 style: |
   section {
-    font-size: 28px;
+    font-size: 26px;
+    padding: 50px 60px 100px 60px;
   }
   h1 {
     color: #e74c3c;
+    margin-bottom: 30px;
   }
   h2 {
     color: #2c3e50;
+    margin-bottom: 25px;
+  }
+  h3 {
+    margin-bottom: 15px;
   }
   table {
-    font-size: 22px;
+    font-size: 20px;
+    margin-bottom: 25px;
+  }
+  th, td {
+    padding: 6px 12px;
+  }
+  ul, ol {
+    margin-bottom: 15px;
+  }
+  li {
+    margin-bottom: 5px;
+  }
+  blockquote {
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+  pre {
+    font-size: 16px;
   }
   .warning {
     background: #fff3cd;
     border-left: 4px solid #ffc107;
     padding: 10px;
+    margin: 15px 0;
   }
   .danger {
     background: #f8d7da;
     border-left: 4px solid #dc3545;
     padding: 10px;
+    margin: 15px 0;
+  }
+  /* For slides with lots of content - use: <!-- _class: compact --> */
+  section.compact {
+    font-size: 22px;
+    padding: 40px 50px 80px 50px;
+  }
+  section.compact table {
+    font-size: 17px;
+  }
+  section.compact th, section.compact td {
+    padding: 4px 8px;
+  }
+  /* For slides needing extra bottom space - use: <!-- _class: spacious --> */
+  section.spacious {
+    padding-bottom: 120px;
+  }
+  /* To hide a slide - use: <!-- _class: hidden --> */
+  section.hidden {
+    display: none !important;
   }
 ---
-
 # OpenClaw: The Future of Personal AI Agents
 
 **A Deep Dive for IT Management & Operations Teams**
 
 ![bg right:35%](OpenClaw.jpeg)
 
-*Presented by: Yong Liu*
+*Presented by: Matthew Liu*
 *February 2026*
 
 ---
@@ -118,6 +161,11 @@ style: |
 
 ---
 
+![bg contain](./openclaw-name-evolution-timeline.webp)
+
+
+---
+
 ## The Chaotic Rebrand Day
 
 Peter's words on the Moltbot → OpenClaw rebrand:
@@ -152,6 +200,8 @@ The lobster represents:
 
 ---
 
+<!-- _class: compact -->
+
 ## OpenClaw vs. The Competition
 
 | Feature | OpenClaw | Claude Code | Manus AI |
@@ -165,6 +215,8 @@ The lobster represents:
 | **Cost Model** | API usage only | $100-200/mo | Subscription |
 
 ---
+
+<!-- _class: compact -->
 
 ## The "Digital Employee" Philosophy
 
@@ -191,9 +243,9 @@ What makes OpenClaw feel like a colleague, not a chatbot:
 
 ```
 ┌──────────────────────────────────────────────────────────┐
-│                     OpenClaw Gateway                      │
+│                     OpenClaw Gateway                     │
 │  ┌────────────────────────────────────────────────────┐  │
-│  │                   Coding Agent Skill                │  │
+│  │                   Coding Agent Skill               │  │
 │  │  ┌──────────┐ ┌──────────┐ ┌──────────┐ ┌────────┐ │  │
 │  │  │  Codex   │ │  Claude  │ │ OpenCode │ │   Pi   │ │  │
 │  │  │ (OpenAI) │ │   Code   │ │          │ │        │ │  │
@@ -209,6 +261,8 @@ OpenClaw can **orchestrate** Claude Code as one of its coding tools:
 
 ---
 
+<!-- _class: pb -->
+
 ## How OpenClaw Inspired Claude Cowork
 
 ### The Pattern Anthropic Noticed
@@ -219,6 +273,7 @@ Users were adapting **Claude Code** (developer tool) for non-technical tasks:
 - File organization
 
 ### Anthropic's Response: Claude Cowork (Jan 2026)
+
 
 > "Claude Code for the rest of your work"
 
@@ -232,20 +287,17 @@ Users were adapting **Claude Code** (developer tool) for non-technical tasks:
 
 ---
 
+<!-- _class: compact -->
+
 ## Why OpenClaw Became Popular
 
 ### The Perfect Storm
 
 1. **180x Efficiency Claims** — Viral demos showing massive productivity gains
-
 2. **"It Just Keeps Working"** — Unlike chat, it continues until done
-
 3. **Community Enthusiasm** — Hacker News, Reddit, X/Twitter, TikTok
-
 4. **Open Source** — Full transparency, community contributions
-
 5. **Developer First** — Built by developers, for developers
-
 6. **Multi-Platform** — Works where your team already communicates
 
 ---
@@ -440,44 +492,56 @@ sudo systemctl restart caddy
 
 ---
 
-## High-Level Architecture
+<!-- _class: compact -->
+
+## Architecture Overview
+
+<div style="display: flex; gap: 30px;">
+<div style="flex: 1;">
+
+### High-Level Architecture
 
 ```
-┌─────────────────────────────────────────────────────────────┐
-│                      OpenClaw Gateway                        │
-├─────────────────────────────────────────────────────────────┤
-│  Control UI    │    Agent Runtime    │    Skills Engine     │
-│  (Web-based)   │    (Claude/LLM)     │    (50+ Skills)      │
-└─────────────────────────────────────────────────────────────┘
-                              │
-        ┌─────────────────────┼─────────────────────┐
-        ▼                     ▼                     ▼
-┌─────────────┐      ┌─────────────┐      ┌─────────────┐
-│  Telegram   │      │  Discord    │      │   Slack     │
-└─────────────┘      └─────────────┘      └─────────────┘
-        │                     │                     │
-        └─────────────────────┼─────────────────────┘
-                              ▼
-                    ┌─────────────────┐
-                    │   Claude API    │
-                    │  (Anthropic)    │
-                    └─────────────────┘
+┌────────────────────────────────┐
+│      OpenClaw Gateway          │
+├────────────────────────────────┤
+│ Control UI │ Agent  │ Skills   │
+│ (Web)      │ Runtime│ Engine   │
+└────────────────────────────────┘
+              │
+    ┌─────────┼─────────┐
+    ▼         ▼         ▼
+┌───────┐ ┌───────┐ ┌───────┐
+│Telegr.│ │Discord│ │ Slack │
+└───────┘ └───────┘ └───────┘
+    │         │         │
+    └─────────┼─────────┘
+              ▼
+      ┌─────────────┐
+      │ Claude API  │
+      └─────────────┘
 ```
+
+</div>
+<div style="flex: 1;">
+
+### Key Components
+
+| Component | Purpose |
+|-----------|---------|
+| **Gateway** | Routes messages, manages sessions |
+| **Control UI** | Web-based admin dashboard |
+| **Agent Runtime** | Claude Opus 4.5 / LLM brain |
+| **Skills Engine** | 50+ extensible modules |
+| **Device Pairing** | Explicit approval per device |
+| **Channels** | Multi-platform messaging |
+
+</div>
+</div>
 
 ---
 
-## Key Components Explained
-
-| Component | Purpose | Details |
-|-----------|---------|---------|
-| **Gateway** | Central hub | Routes messages, manages sessions |
-| **Control UI** | Admin interface | Web-based dashboard |
-| **Agent Runtime** | LLM brain | Claude Opus 4.5 or other models |
-| **Skills Engine** | Capabilities | 50+ extensible modules |
-| **Device Pairing** | Security | Explicit approval per device |
-| **Channels** | Communication | Multi-platform messaging |
-
----
+<!-- _class: compact -->
 
 ## Skills System
 
@@ -522,6 +586,8 @@ sudo systemctl restart caddy
 
 ---
 
+<!-- _class: compact -->
+
 ## Elevated Permissions System
 
 ### What It Controls
@@ -550,15 +616,15 @@ Even `sudo echo "hi"` fails
 
 ```
 ┌──────────────────────────────────────────────────────────┐
-│                    AliCloud (US Region)                   │
+│                    AliCloud (US Region)                  │
 │  ┌────────────────────────────────────────────────────┐  │
-│  │         Lightweight Application Server              │  │
+│  │         Lightweight Application Server             │  │
 │  │  ┌──────────────────────────────────────────────┐  │  │
 │  │  │  Docker Container                            │  │  │
-│  │  │  ┌──────────────┐  ┌───────────────────┐    │  │  │
-│  │  │  │   OpenClaw   │  │   Caddy (Proxy)   │    │  │  │
-│  │  │  │   Gateway    │  │   + HTTPS         │    │  │  │
-│  │  │  └──────────────┘  └───────────────────┘    │  │  │
+│  │  │  ┌──────────────┐  ┌───────────────────┐     │  │  │
+│  │  │  │   OpenClaw   │  │   Caddy (Proxy)   │     │  │  │
+│  │  │  │   Gateway    │  │   + HTTPS         │     │  │  │
+│  │  │  └──────────────┘  └───────────────────┘     │  │  │
 │  │  └──────────────────────────────────────────────┘  │  │
 │  └────────────────────────────────────────────────────┘  │
 └──────────────────────────────────────────────────────────┘
@@ -630,6 +696,8 @@ Even `sudo echo "hi"` fails
 
 ---
 
+<!-- _class: compact -->
+
 ## Critical Security Risks
 
 ### 1. Prompt Injection (HIGH)
@@ -651,6 +719,8 @@ Even `sudo echo "hi"` fails
 - Usage monitoring and alerts
 
 ---
+
+<!-- _class: compact -->
 
 ## Critical Security Risks (continued)
 
@@ -675,7 +745,7 @@ Even `sudo echo "hi"` fails
 - Cloudflare Access for admin routes
 
 ---
-
+<!-- _class: compact -->
 ## Operational Risks
 
 | Risk | Description | Mitigation |
@@ -687,6 +757,8 @@ Even `sudo echo "hi"` fails
 | **LLM Hallucinations** | Incorrect actions | Human review for critical tasks |
 
 ---
+
+<!-- _class: compact -->
 
 ## Best Practices
 
@@ -749,25 +821,15 @@ Jan 2026: Anthropic launches Claude Cowork
 
 ---
 
+
 ## The Future of Agentic AI
 
 ### 2026 Predictions
 
-1. **Hybrid Deployments**
-   - Enterprise: Claude Cowork for workers
-   - Power users: OpenClaw for automation
-
-2. **Multi-Agent Orchestration**
-   - Agents collaborating via MCP protocol
-   - OpenAgents network integration
-
-3. **Security Maturation**
-   - Enterprise-grade sandboxing
-   - Compliance frameworks for AI agents
-
-4. **Skill Ecosystems**
-   - ClawdHub growth
-   - Enterprise skill libraries
+1. **Hybrid Deployments** — Enterprise: Claude Cowork for workers; Power users: OpenClaw for automation
+2. **Multi-Agent Orchestration** — Agents collaborating via MCP protocol; OpenAgents network integration
+3. **Security Maturation** — Enterprise-grade sandboxing; Compliance frameworks for AI agents
+4. **Skill Ecosystems** — ClawdHub growth; Enterprise skill libraries
 
 ---
 
@@ -833,7 +895,7 @@ Jan 2026: Anthropic launches Claude Cowork
 # Thank You
 
 **Contact:**
-- Presenter: Yong Liu
+- Presenter: Matthew Liu
 - Date: February 2026
 
 ![bg right:35%](OpenClaw.jpeg)
@@ -896,6 +958,8 @@ open http://localhost:3000
 - Enterprise integration patterns
 
 ---
+
+<!-- _class: compact -->
 
 ## Appendix D: Comparison Matrix
 
