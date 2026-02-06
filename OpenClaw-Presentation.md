@@ -70,6 +70,11 @@ style: |
   section.hidden {
     display: none !important;
   }
+  /* Two-column layout for slides */
+  .cols { display: flex; gap: 24px; height: 100%; }
+  .col { flex: 1; }
+  .col-left { padding-right: 16px; border-right: 1px solid #ddd; }
+  .col-right { padding-left: 16px; }
 ---
 # OpenClaw: The Future of Personal AI Agents
 
@@ -140,6 +145,9 @@ style: |
 
 ## From Clawdbot to Moltbot to OpenClaw
 
+<div class="cols">
+<div class="col col-left">
+
 ```
 ┌─────────────┐    ┌─────────────┐    ┌─────────────┐
 │  Clawdbot   │ →  │   Moltbot   │ →  │  OpenClaw   │
@@ -159,9 +167,13 @@ style: |
 | Jan 2026 | **Moltbot** | Anthropic sent polite trademark request |
 | Jan 30, 2026 | **OpenClaw** | Final rebrand after trademark search |
 
----
+</div>
+<div class="col col-right">
 
-![bg contain](references/openclaw-name-evolution-timeline.webp)
+![fit](references/openclaw-name-evolution-timeline.webp)
+
+</div>
+</div>
 
 
 ---
