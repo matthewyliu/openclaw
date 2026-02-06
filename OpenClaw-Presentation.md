@@ -296,7 +296,7 @@ OpenClaw can **orchestrate** Claude Code as one of its coding tools:
 
 ---
 
-<!-- _class: pb -->
+<!-- _class: hidden -->
 
 ## How OpenClaw Inspired Claude Cowork
 
@@ -518,8 +518,8 @@ sudo systemctl restart caddy
 
 ## Architecture Overview
 
-<div style="display: flex; gap: 30px;">
-<div style="flex: 1;">
+<div class="cols cols-70-30">
+<div class="col col-left">
 
 ### High-Level Architecture
 
@@ -545,7 +545,7 @@ sudo systemctl restart caddy
 ```
 
 </div>
-<div style="flex: 1;">
+<div class="col col-right">
 
 ### Key Components
 
@@ -563,7 +563,7 @@ sudo systemctl restart caddy
 
 ---
 
-<!-- _class: compact -->
+![bg right:40% contain](./icons/openclaw_skills.png)
 
 ## Skills System
 
@@ -585,6 +585,32 @@ sudo systemctl restart caddy
 
 ---
 
+## Security
+
+<!-- _class: compact -->
+
+<div class="cols cols">
+<div class="col col-left">
+
+### Elevated Permissions System
+
+| Setting | Meaning |
+|---------|---------|
+| `tools.elevated.enabled` | Master switch for elevated execution |
+| `tools.elevated.allowFrom.webchat` | Allow webchat to use elevated commands |
+| `agents.list[].tools.elevated.*` | Per-agent overrides |
+
+### With Elevated ON:
+- `dnf install ...`
+- `systemctl restart ...`
+- Any `sudo` command
+
+### Without It:
+Even `sudo echo "hi"` fails
+
+</div>
+<div class="col col-right">
+
 ## Security Layers
 
 ```
@@ -605,34 +631,18 @@ sudo systemctl restart caddy
 │  Separate control for sudo/root access          │
 └─────────────────────────────────────────────────┘
 ```
+</div>
+</div>
 
----
-
-<!-- _class: compact -->
-
-## Elevated Permissions System
-
-### What It Controls
-
-| Setting | Meaning |
-|---------|---------|
-| `tools.elevated.enabled` | Master switch for elevated execution |
-| `tools.elevated.allowFrom.webchat` | Allow webchat to use elevated commands |
-| `agents.list[].tools.elevated.*` | Per-agent overrides |
-
-### With Elevated ON:
-- `dnf install ...`
-- `systemctl restart ...`
-- Any `sudo` command
-
-### Without It:
-Even `sudo echo "hi"` fails
 
 ---
 
 # My Setup: AliCloud Light App Server
 
 ---
+
+<div class="cols cols">
+<div class="col col-left">
 
 ## Deployment Architecture
 
@@ -651,10 +661,13 @@ Even `sudo echo "hi"` fails
 │  └────────────────────────────────────────────────────┘  │
 └──────────────────────────────────────────────────────────┘
 ```
+</div>
 
----
+<div class="col col-right">
 
 ## Why AliCloud US Region?
+
+<!-- _class: compact -->
 
 | Factor | Reason |
 |--------|--------|
@@ -671,37 +684,9 @@ Even `sudo echo "hi"` fails
 - Docker for containerization
 - Caddy as reverse proxy with auto-HTTPS
 - Persistent storage for memory
+</div>
+</div>
 
----
-
-## Setup Steps
-
-1. **Provision Server**
-   - AliCloud Lightweight App Server (US region)
-   - 2 vCPU, 4GB RAM recommended
-
-2. **Install Dependencies**
-   ```bash
-   dnf install docker nodejs npm
-   systemctl enable docker
-   ```
-
-3. **Deploy OpenClaw**
-   ```bash
-   git clone https://github.com/openclaw/openclaw
-   npm install
-   ```
-
-4. **Configure Caddy**
-   - Reverse proxy to localhost
-   - Automatic HTTPS certificates
-
-5. **Security Hardening**
-   - See security checklist (next section)
-
----
-
-# Security Risks & Mitigations
 
 ---
 
