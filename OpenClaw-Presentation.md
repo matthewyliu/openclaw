@@ -75,6 +75,9 @@ style: |
   .col { flex: 1; }
   .col-left { flex: 2; padding-right: 16px; border-right: 1px solid #ddd; }
   .col-right { flex: 1; padding-left: 16px; }
+  /* Wider left pane when needed */
+  .cols-70-30 .col-left { flex: 7; }
+  .cols-70-30 .col-right { flex: 3; }
   /* Side note styling */
   .side-note { font-size: 20px; color: #666; }
 ---
@@ -182,7 +185,7 @@ style: |
 
 ## The Chaotic Rebrand Day
 
-<div class="cols">
+<div class="cols cols-70-30">
 <div class="col col-left">
 
 Peter's words on the Moltbot → OpenClaw rebrand:
@@ -221,7 +224,7 @@ The lobster represents:
 
 <!-- _class: compact -->
 
-![bg right:40% opacity:0.25](references/digital-employee.png)
+![bg right:40% opacity:0.5](references/digital-employee.png)
 
 ## The "Digital Employee" Philosophy
 
@@ -243,10 +246,21 @@ What makes OpenClaw feel like a colleague, not a chatbot:
 - Makes autonomous decisions
 
 ---
+## Why OpenClaw Became Popular
 
 <!-- _class: compact -->
 
-## OpenClaw vs. The Competition
+![bg right:30% opacity:0.25](references/digital-employee.png)
+### The Perfect Storm
+
+1. **180x Efficiency Claims** — Viral demos showing massive productivity gains
+2. **"It Just Keeps Working"** — Unlike chat, it continues until done
+3. **Community Enthusiasm** — Hacker News, Reddit, X/Twitter, TikTok
+4. **Open Source** — Full transparency, community contributions
+5. **Developer First** — Built by developers, for developers
+6. **Multi-Platform** — Works where your team already communicates
+
+### OpenClaw vs. The Competition
 
 | Feature | OpenClaw | Claude Code | Manus AI |
 |---------|----------|-------------|----------|
@@ -308,20 +322,7 @@ Users were adapting **Claude Code** (developer tool) for non-technical tasks:
 
 ---
 
-<!-- _class: compact -->
 
-## Why OpenClaw Became Popular
-
-### The Perfect Storm
-
-1. **180x Efficiency Claims** — Viral demos showing massive productivity gains
-2. **"It Just Keeps Working"** — Unlike chat, it continues until done
-3. **Community Enthusiasm** — Hacker News, Reddit, X/Twitter, TikTok
-4. **Open Source** — Full transparency, community contributions
-5. **Developer First** — Built by developers, for developers
-6. **Multi-Platform** — Works where your team already communicates
-
----
 
 # Live Demos & Use Cases
 
