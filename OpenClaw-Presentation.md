@@ -75,7 +75,7 @@ style: |
 
 **A Deep Dive for IT Management & Operations Teams**
 
-![bg right:35%](OpenClaw.jpeg)
+![bg right:35%](icons/OpenClaw.jpeg)
 
 *Presented by: Matthew Liu*
 *February 2026*
@@ -161,7 +161,7 @@ style: |
 
 ---
 
-![bg contain](./openclaw-name-evolution-timeline.webp)
+![bg contain](references/openclaw-name-evolution-timeline.webp)
 
 
 ---
@@ -184,7 +184,7 @@ But the project grew despite this:
 
 ## Why "Space Lobster" Mascot?
 
-![bg right:30%](OpenClaw.jpeg)
+![bg right:30%](icons/OpenClaw.jpeg)
 
 The lobster represents:
 - **Molting**: Continuous evolution and growth
@@ -898,7 +898,7 @@ Jan 2026: Anthropic launches Claude Cowork
 - Presenter: Matthew Liu
 - Date: February 2026
 
-![bg right:35%](OpenClaw.jpeg)
+![bg right:35%](icons/OpenClaw.jpeg)
 
 *OpenClaw — Your Personal AI Assistant*
 
