@@ -368,7 +368,9 @@ Users were adapting **Claude Code** (developer tool) for non-technical tasks:
 
 **Online case:** Users set up 9 AM Telegram briefings combining calendar + prioritized tasks + news alerts
 
-![feeds](./Demos/1.Collecting%20Info/RSS-4.png)
+![w:280](./Demos/1.Collecting%20Info/RSS-4.png)
+
+![w:280](./Demos/1.Collecting%20Info/X(Twitter).png)
 </div>
 </div>
 
@@ -387,6 +389,8 @@ Users were adapting **Claude Code** (developer tool) for non-technical tasks:
 2. Extracted 7 key security questions (data encryption, audit logs, SLA, ISO 42001...)
 3. Offered to download & analyze the attached PDF
 4. Requested approval before running `curl` and `pdftotext`
+
+![w:420](./Demos/2.Reading%20email/email_2.png)
 
 **Online case:** Inbox triage at **60x speed** — summarize, prioritize, draft replies
 
@@ -415,6 +419,8 @@ Asked: *"Recommend RTSP/ONVIF cameras for home"*
 <div class="col col-right side-note">
 
 **Online case:** Personal finance — query hledger via text: *"How much on food last month?"* gets instant answer from thousands of transactions
+
+![w:240](./screen%20captures/Screenshot%202026-02-03%20at%2022.32.56.png)
 
 </div>
 </div>
@@ -445,6 +451,8 @@ Asked: *"Recommend RTSP/ONVIF cameras for home"*
 
 **Online case:** Request movie for Jellyseerr media server: *"Add the new Lanthimos movie"* — searches, finds, submits automatically
 
+![w:260](./Demos/Coding/coding-agent_1.png)
+
 </div>
 </div>
 
@@ -471,6 +479,10 @@ Asked: *"Recommend RTSP/ONVIF cameras for home"*
 <div class="col col-right side-note">
 
 **Online case:** File organization — **30 min → 10 seconds**: auto-classify files, create folders, move to right locations
+
+![w:240](./Demos/4.Generating%20audio/gen_adudio_1.png)
+
+![w:240](./Demos/3.Taking%20Notes/Notion_3.png)
 
 </div>
 </div>
@@ -504,6 +516,8 @@ OpenClaw handled:
 - `xeyes` via Xpra
 - Remote GUI from chat
 
+![w:120](./Demos/5.Displaying%20GUI/xeyes.png) ![w:120](./Demos/5.Displaying%20GUI/xmessage.png)
+
 **Online case:** Proactive directory monitoring — auto-notify on trigger conditions
 
 </div>
@@ -517,12 +531,12 @@ OpenClaw handled:
 
 | Channel | What OpenClaw Does |
 |---------|-------------------|
-| **WhatsApp** | Daily briefs, voice messages, research replies |
-| **Telegram** | Task management, alerts, daily briefings |
-| **Discord** | Team notifications, server management |
-| **Slack** | Channel updates, workflow triggers |
-| **X/Twitter** | Read, search, monitor timelines |
-| **iMessage** | Mac-based personal messaging |
+| ![w:24](./icons/whatsapp.svg) **WhatsApp** | Daily briefs, voice messages, research replies |
+| ![w:24](./icons/telegram.svg) **Telegram** | Task management, alerts, daily briefings |
+| ![w:24](./icons/discord.svg) **Discord** | Team notifications, server management |
+| ![w:24](./icons/slack.svg) **Slack** | Channel updates, workflow triggers |
+| ![w:24](./icons/x-twitter.svg) **X/Twitter** | Read, search, monitor timelines |
+| ![w:24](./icons/imessage.svg) **iMessage** | Mac-based personal messaging |
 
 > All from one agent. One conversation context. Persistent memory across channels.
 
@@ -725,54 +739,45 @@ Even `sudo echo "hi"` fails
 
 <!-- _class: compact -->
 
+![bg opacity:0.15](./icons/security.jpeg)
+
 ## Critical Security Risks
 
-### 1. Prompt Injection (HIGH)
+<div style="display: flex; align-items: center; justify-content: center; height: 80%;">
+<div class="cols">
+<div class="col">
 
-**Risk:** Malicious content in messages can hijack agent behavior
+#### ![w:24](./icons/owasp.svg) 1. Prompt Injection (HIGH)
 
-**Mitigation:**
-- Input validation
-- Sandboxing sensitive operations
-- Human approval for critical actions
+**Risk:** Malicious content hijacks agent behavior
+**Mitigation:** Input validation · Sandboxing · Human approval
 
-### 2. API Key Exposure (HIGH)
+#### ![w:24](./icons/key.svg) 2. API Key Exposure (HIGH)
 
 **Risk:** Anthropic API keys stored on server
+**Mitigation:** Secrets management · Key rotation · Usage alerts
 
-**Mitigation:**
-- Secrets management (not in config files)
-- Regular key rotation
-- Usage monitoring and alerts
+</div>
+<div class="col">
 
----
+#### ![w:24](./icons/shield-alert.svg) 3. Local File Inclusion (CRITICAL)
 
-<!-- _class: compact -->
+**Risk:** Attackers read arbitrary files (Feb 2026 discovery)
+**Mitigation:** Patch immediately · Stay updated · Monitor advisories
 
-## Critical Security Risks (continued)
-
-### 3. Arbitrary Local File Inclusion (CRITICAL)
-
-**Feb 2026 Discovery:** LFI vulnerability found
-
-**Risk:** Attackers could read arbitrary files from server
-
-**Mitigation:**
-- Keep OpenClaw updated
-- Apply security patches immediately
-- Monitor security advisories
-
-### 4. Unauthorized Access (MEDIUM)
+#### ![w:24](./icons/lock.svg) 4. Unauthorized Access (MEDIUM)
 
 **Risk:** Unauthorized users gaining access
+**Mitigation:** Gateway token · Device pairing · ![w:16](./icons/cloudflare.svg) Cloudflare Access
 
-**Mitigation:**
-- Gateway token authentication
-- Device pairing requirement
-- Cloudflare Access for admin routes
+</div>
+</div>
+</div>
 
 ---
-<!-- _class: compact -->
+
+![bg opacity:0.15](./icons/operational-risk.jpg)
+
 ## Operational Risks
 
 | Risk | Description | Mitigation |
@@ -789,6 +794,9 @@ Even `sudo echo "hi"` fails
 
 ## Best Practices
 
+<div class="cols">
+<div class="col">
+
 ### ✅ DO
 
 - Enable device pairing for authentication
@@ -798,6 +806,9 @@ Even `sudo echo "hi"` fails
 - Keep API keys secure and rotate regularly
 - Review command approvals carefully
 
+</div>
+<div class="col">
+
 ### ❌ DON'T
 
 - Use in production without security review
@@ -805,6 +816,9 @@ Even `sudo echo "hi"` fails
 - Grant unrestricted device access
 - Skip input validation
 - Store sensitive data without encryption
+
+</div>
+</div>
 
 ---
 
