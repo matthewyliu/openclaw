@@ -324,209 +324,189 @@ Users were adapting **Claude Code** (developer tool) for non-technical tasks:
 
 
 
-# A Day with Your AI Assistant
+# Live Demos & Use Cases
 
 ---
 
-<!-- _class: compact -->
+## Demo Categories
 
-## How OpenClaw Fits Your Day
-
-| Time | What the Assistant Does | Category |
-|------|------------------------|----------|
-| 8:00 AM | Morning brief: top AI/tech news to WhatsApp | Stay Informed |
-| 9:00 AM | Read & summarize emails, extract action items | Work Smarter |
-| 10:00 AM | Research a topic, compare options, recommend | Think Deeper |
-| 2:00 PM | Write code, review PRs, debug issues | Build & Ship |
-| 3:00 PM | Create content: notes, pages, audio files | Create & Share |
-| 5:00 PM | Server config, deployment, file management | Operate & Maintain |
-| Anytime | Multi-channel messaging across platforms | Stay Connected |
-| 24/7 | Scheduled tasks, monitoring, self-healing | Always On |
+| Category | Examples |
+|----------|----------|
+| **Information Assistant** | RSS feeds, news briefing, research |
+| **Communication Hub** | Multi-channel messaging, email management |
+| **Development Buddy** | Code review, PR analysis, coding agent |
+| **System Administration** | Server setup, file management, automation |
+| **Content Creation** | TTS, document creation, Notion integration |
+| **Smart Automation** | Scheduled tasks, cron jobs, monitoring |
 
 ---
 
-## 1. Stay Informed: Morning Brief
+## Demo 1: Daily Tech Brief to WhatsApp
 
-<!-- _class: compact -->
+### Setup RSS Feeds → Automatic Daily Summary
 
-<div class="cols cols-70-30">
-<div class="col col-left">
+**Feeds Configured:**
+- MIT Technology Review
+- Synced Review (机器之心 - Chinese AI)
+- Hacker News
+- OpenAI Blog
 
-**RSS feeds → Daily summary → WhatsApp at 8 AM**
-
-- MIT Technology Review, Hacker News, OpenAI Blog
-- Synced Review (机器之心 — Chinese AI)
-- Top 5 articles, auto-summarized
-- Scheduled via cron: every day, 8:00 AM China time
-
-**Also:** X/Twitter monitoring — read tweets, search, bookmarks
+**Result:**
+- Daily brief at 8:00 AM China time
+- Top 5 articles summarized
+- Delivered directly to WhatsApp
 
 *"Good morning! Here are 5 new articles from your feeds..."*
 
-</div>
-<div class="col col-right side-note">
+---
 
-**Online case:** Users set up 9 AM Telegram briefings combining calendar + prioritized tasks + news alerts
+## Demo 2: Multi-Channel Communication
 
-![feeds](./Demos/1.Collecting%20Info/RSS-4.png)
-</div>
-</div>
+### X/Twitter Integration
+
+OpenClaw can:
+- Read tweets by URL or ID
+- Search Twitter content
+- Access home timeline
+- View user tweets
+- Access bookmarks and likes
+
+### Other Channels
+- **Telegram**: DMs and groups
+- **Discord**: DMs and servers
+- **Slack**: DMs and channels
+- **WhatsApp**: Personal DMs
+- **iMessage**: Mac-based messaging
 
 ---
 
-![bg right:40% contain](./Demos/2.Reading%20email/email_1.png)
-## 2. Work Smarter: Email & Document Processing
+## Demo 3: Coding Agent Integration
 
-<!-- _class: compact -->
+### Supported Coding Tools
+
+| Tool | Provider | Installation |
+|------|----------|--------------|
+| `codex` | OpenAI | `npm install -g @openai/codex` |
+| `claude` | Anthropic | `npm install -g @anthropic-ai/claude-code` |
+| `opencode` | OpenCode | Official docs |
+| `pi` | Mario Zechner | `npm install -g @mariozechner/pi-coding-agent` |
+
+### Capabilities
+- Code generation & bug fixes
+- Code review & PR analysis
+- Debugging & refactoring
+- Project scaffolding
+
+---
+
+## Demo 4: Research Assistant
+
+### Camera Recommendation Example (Chinese)
+
+When asked about RTSP/ONVIF cameras:
+
+**OpenClaw researched and provided:**
+- TP-LINK models (¥100-150)
+- 360 cameras (¥80-120)
+- Hikvision options (¥150-200)
+- Dahua recommendations (¥120-180)
+
+**Including:**
+- Price comparisons
+- Feature analysis
+- RTSP URL formats
+- Setup instructions
+
+---
+
+## Demo 5: Text-to-Speech (Multi-language)
+
+### Chinese TTS Demonstration
+
+**Components Automatically Downloaded:**
+- Runtime environment
+- Chinese model (60MB)
+- Phoneme dictionary (cmn_dict)
+
+**Result:**
+- Natural-sounding Chinese voice
+- Delivered via WhatsApp audio message
+
+**Also demonstrated:**
+- Hamlet's soliloquy in English
+- "To be or not to be..." as audio
+
+---
+
+## Demo 6: Notion Integration
+
+### Creating Content via API
+
+OpenClaw created:
+- Notion workspace integration
+- Pages with embedded content
+- YouTube video embeds
+- Dynamic content updates
+
+**Security:**
+- OAuth integration secret
+- Read/write content capabilities
+- Workspace-scoped access
+
+---
+
+## Demo 7: System Administration
+
+### Server Configuration Tasks
+
+OpenClaw helped with:
+- Caddy web server configuration
+- File copying and deployment
+- `systemctl` service management
+- Configuration file editing
+
+**Demonstrated Commands:**
+```bash
+cp /home/admin/clawd/xxx /var/www/openclaw-web/
+cp /home/admin/clawd/Caddyfile_modified /etc/caddy/Caddyfile
+sudo systemctl restart caddy
+```
+
+---
+
+## Demo 8: Email & Document Processing
+
+### Security Questionnaire Analysis
 
 **Email from:** Michelin's Security Team
 **Subject:** Customer Service AI LLM Security Review
 
-**OpenClaw automatically:**
-1. Read the email content
-2. Extracted 7 key security questions (data encryption, audit logs, SLA, ISO 42001...)
-3. Offered to download & analyze the attached PDF
-4. Requested approval before running `curl` and `pdftotext`
+**OpenClaw extracted 7 key questions:**
+1. Data storage location & encryption
+2. Voice data handling & model training
+3. Audit logs availability
+4. SLA & compensation
+5. Pen testing reports
+6. Compliance certifications (ISO 42001)
+7. AI-BOM (supply chain transparency)
 
-**Online case:** Inbox triage at **60x speed** — summarize, prioritize, draft replies
-
----
-
-## 3. Think Deeper: Research & Recommend
-
-<!-- _class: compact -->
-
-<div class="cols cols-70-30">
-<div class="col col-left">
-
-### Camera Recommendation (Chinese)
-
-Asked: *"Recommend RTSP/ONVIF cameras for home"*
-
-**OpenClaw delivered:**
-- TP-LINK TL-IPC44AW (¥100-150) — best value
-- 360 M1Pro (¥80-120) — PTZ, dual-camera
-- Hikvision C1C (¥150-200) — great image quality
-- Dahua DH-IPC-HDW1230C (¥120-180) — POE, stable
-
-**Including:** RTSP URL formats, setup steps, purchase advice
-
-</div>
-<div class="col col-right side-note">
-
-**Online case:** Personal finance — query hledger via text: *"How much on food last month?"* gets instant answer from thousands of transactions
-
-</div>
-</div>
+**Action:** Offered to download and analyze attached PDF
 
 ---
 
-## 4. Build & Ship: Coding Agent
+## Demo 9: GUI Remote Access (Xpra)
 
-<!-- _class: compact -->
+### Running GUI Applications Remotely
 
-<div class="cols cols-70-30">
-<div class="col col-left">
+**Demonstrated:**
+- `xeyes` — Classic X11 application
+- Running via Xpra remote display
+- GUI accessible from OpenClaw chat
 
-### Orchestrates Multiple Coding Tools
-
-| Tool | Provider |
-|------|----------|
-| `codex` | OpenAI |
-| `claude` | Anthropic (Claude Code) |
-| `opencode` | OpenCode agent |
-| `pi` | Pi Coding Agent |
-
-**Capabilities:** Code generation, review, debugging, refactoring
-**How:** Runs coding CLIs as background processes via the `coding-agent` skill
-
-</div>
-<div class="col col-right side-note">
-
-**Online case:** Request movie for Jellyseerr media server: *"Add the new Lanthimos movie"* — searches, finds, submits automatically
-
-</div>
-</div>
-
----
-
-## 5. Create & Share: Content Generation
-
-<!-- _class: compact -->
-
-<div class="cols cols-70-30">
-<div class="col col-left">
-
-### Text-to-Speech (Multi-language)
-- Chinese TTS: auto-downloaded runtime + 60MB model + phoneme dictionary
-- Hamlet's soliloquy in English via Brian voice (eleven_v3)
-- Audio delivered as WhatsApp voice messages
-
-### Notion Integration
-- Created workspace, pages with embedded YouTube videos
-- Content management via Notion API
-- OAuth-secured, workspace-scoped access
-
-</div>
-<div class="col col-right side-note">
-
-**Online case:** File organization — **30 min → 10 seconds**: auto-classify files, create folders, move to right locations
-
-</div>
-</div>
-
----
-
-## 6. Operate & Maintain: System Admin
-
-<!-- _class: compact -->
-
-<div class="cols cols-70-30">
-<div class="col col-left">
-
-### Server Configuration (My Experience)
-
-OpenClaw handled:
-- Caddy reverse proxy config & deployment
-- File management across directories
-- `systemctl restart caddy` with sudo
-- Remembered file paths for next time
-
-### Elevated Permissions & Approval
-- Every `sudo` command requires explicit approval
-- "Allow once / Always allow / Deny" dialog
-- Self-configured its own elevated permission settings
-
-</div>
-<div class="col col-right side-note">
-
-### GUI Remote Access
-- `xeyes` via Xpra
-- Remote GUI from chat
-
-**Online case:** Proactive directory monitoring — auto-notify on trigger conditions
-
-</div>
-</div>
-
----
-
-## 7. Stay Connected: Multi-Channel Hub
-
-<!-- _class: compact -->
-
-| Channel | What OpenClaw Does |
-|---------|-------------------|
-| **WhatsApp** | Daily briefs, voice messages, research replies |
-| **Telegram** | Task management, alerts, daily briefings |
-| **Discord** | Team notifications, server management |
-| **Slack** | Channel updates, workflow triggers |
-| **X/Twitter** | Read, search, monitor timelines |
-| **iMessage** | Mac-based personal messaging |
-
-> All from one agent. One conversation context. Persistent memory across channels.
-
-**Online case:** Linear integration — view weekly tasks, create & update assignments, all via Telegram
+**Use Case:**
+- Remote server management
+- Visual application control
+- Headless server GUI access
 
 ---
 
