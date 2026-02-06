@@ -73,8 +73,10 @@ style: |
   /* Two-column layout for slides */
   .cols { display: flex; gap: 24px; height: 100%; }
   .col { flex: 1; }
-  .col-left { padding-right: 16px; border-right: 1px solid #ddd; }
-  .col-right { padding-left: 16px; }
+  .col-left { flex: 2; padding-right: 16px; border-right: 1px solid #ddd; }
+  .col-right { flex: 1; padding-left: 16px; }
+  /* Side note styling */
+  .side-note { font-size: 20px; color: #666; }
 ---
 # OpenClaw: The Future of Personal AI Agents
 
@@ -180,6 +182,9 @@ style: |
 
 ## The Chaotic Rebrand Day
 
+<div class="cols">
+<div class="col col-left">
+
 Peter's words on the Moltbot → OpenClaw rebrand:
 
 > "Everything that could have gone wrong today went wrong"
@@ -192,19 +197,21 @@ But the project grew despite this:
 - **40,000+ GitHub stars** in under 3 months
 - Described as "one of the fastest-growing repos ever"
 
----
+</div>
+<div class="col col-right side-note">
 
-## Why "Space Lobster" Mascot?
+**“Space Lobster” mascot**
 
-![bg right:30%](icons/OpenClaw.jpeg)
+![w:80%](icons/OpenClaw.jpeg)
 
 The lobster represents:
-- **Molting**: Continuous evolution and growth
-- **Claws**: Capability to take action
-- **Resilient**: Survives trademark changes
-- **Open**: Embracing the community
+- Molting and evolution
+- Capability to take action
+- Resilient through rebrands
+- Open community spirit
 
-> Molty the Space Lobster became the beloved mascot
+</div>
+</div>
 
 ---
 
@@ -214,21 +221,7 @@ The lobster represents:
 
 <!-- _class: compact -->
 
-## OpenClaw vs. The Competition
-
-| Feature | OpenClaw | Claude Code | Manus AI |
-|---------|----------|-------------|----------|
-| **Hosting** | Self-hosted | Desktop app | Cloud |
-| **Data Sovereignty** | 100% yours | Local | Cloud |
-| **24/7 Operation** | Yes | Manual | Limited |
-| **Multi-Channel** | Telegram, WhatsApp, Discord, Slack | None | Chat only |
-| **Persistent Memory** | Yes | Session-based | Cloud-stored |
-| **Open Source** | Yes | No | No |
-| **Cost Model** | API usage only | $100-200/mo | Subscription |
-
----
-
-<!-- _class: compact -->
+![bg right:40% opacity:0.25](references/digital-employee.png)
 
 ## The "Digital Employee" Philosophy
 
@@ -248,6 +241,22 @@ What makes OpenClaw feel like a colleague, not a chatbot:
 - Works until objective is complete
 - Breaks complex tasks into steps
 - Makes autonomous decisions
+
+---
+
+<!-- _class: compact -->
+
+## OpenClaw vs. The Competition
+
+| Feature | OpenClaw | Claude Code | Manus AI |
+|---------|----------|-------------|----------|
+| **Hosting** | Self-hosted | Desktop app | Cloud |
+| **Data Sovereignty** | 100% yours | Local | Cloud |
+| **24/7 Operation** | Yes | Manual | Limited |
+| **Multi-Channel** | Telegram, WhatsApp, Discord, Slack | None | Chat only |
+| **Persistent Memory** | Yes | Session-based | Cloud-stored |
+| **Open Source** | Yes | No | No |
+| **Cost Model** | API usage only | $100-200/mo | Subscription |
 
 ---
 
