@@ -80,6 +80,8 @@ style: |
   .cols-70-30 .col-right { flex: 3; }
   /* Side note styling */
   .side-note { font-size: 20px; color: #666; }
+  /* Red highlight text */
+  .red { color: #e74c3c; }
 ---
 # OpenClaw: The Future of Personal AI Agents
 
@@ -94,17 +96,20 @@ style: |
 
 ## Before We Begin: Two Critical Questions
 
+1. **Why You Need to Know OpenClaw**
+2. **Why You Should Be Very Careful**
+
 ---
 
 ## A. Why You Need to Know OpenClaw
 
-| Reason | Impact |
+| What's Happening | Why It Matters |
 |--------|--------|
-| **Fastest-growing GitHub repo** | 150K+ stars; your team will discover it |
-| **Users deploying without IT approval** | Shadow IT risk is real |
-| **Represents a paradigm shift** | From chatbots to autonomous agents |
-| **Enterprise implications** | Security, compliance, cost considerations |
-| **Industry direction** | Anthropic's Cowork followed this pattern |
+| **People are asking about it** | 150K+ GitHub stars; your team has seen it on HN, Reddit, X, TikTok |
+| **Users may have already deployed it** | Runs on WSL (Windows), Mac, or any Linux box — no IT approval needed |
+| **It's not just another chatbot** | Autonomous agents that read files, run commands, and act 24/7 |
+| **It touches security & compliance** | Full system access, API keys on server, data handling concerns |
+| **Major vendors are following this pattern** | Anthropic's Claude Cowork was inspired by OpenClaw |
 
 > "If you don't understand it, you can't govern it."
 
@@ -121,6 +126,156 @@ style: |
 | **Early-stage software** | Medium | Vulnerabilities actively being discovered |
 
 > **Feb 2026**: Critical LFI vulnerability discovered in OpenClaw
+
+---
+
+# What Makes OpenClaw Unique
+
+---
+
+<!-- _class: compact -->
+
+![bg opacity:0.12](references/digital-employee.png)
+
+## AI Agent as Digital Employee or Personal Assistant?
+
+> **What both roles share:** Stop <span class="red">**repeating**</span> yourself · <span class="red">**Get things done**</span>, not just chat · <span class="red">**Always-on**</span> in your existing apps · Clear <span class="red">**trust & control**</span> boundaries
+
+<div class="cols">
+<div class="col">
+
+### Where the "Digital Employee" Differs
+
+**Work offloading**
+Reduces cognitive load on repetitive tasks — email triage, workflow chores, routine admin
+
+**Accountability**
+Reliable, consistent follow-through you can depend on — like a coworker, not a toy
+
+**Deep integration**
+Connects into your work systems and processes — the "employee" earns its title
+
+</div>
+<div class="col">
+
+### Where the "Personal Assistant" Differs
+
+**Life admin hub**
+Personal logistics via the chat apps you already live in — one interface, not another app
+
+**Proactive nudges**
+Scheduled reminders and background checks so you don't have to remember to ask
+
+**Multimodal convenience**
+Voice, visuals, and richer UI when typing is annoying or text falls short
+
+</div>
+</div>
+
+> *Same engine — continuity, outcomes, access, control. Different job description.*
+
+---
+
+<!-- _class: compact -->
+
+![bg opacity:0.08](references/digital-employee.png)
+
+## Why OpenClaw Became Popular — It Addresses Real Needs
+
+<div class="cols" style="align-items: center;">
+<div class="col" style="border-right: 2px solid #27ae60; padding-right: 16px;">
+
+#### ✅ Common Needs
+
+**Stop repeating yourself**
+— Persistent memory via workspace files
+
+**Get things done**
+— Real tool execution — not advice
+
+**Always-on access**
+— Self-hosted, cron, heartbeat
+
+**Trust & control**
+— Device pairing, approval gates
+
+</div>
+<div class="col" style="border-right: 2px solid #2980b9; padding-right: 16px;">
+
+#### ✅ Role-Specific Needs
+
+**"Digital Employee"**
+— Work offloading: email, calendar, admin
+— Deep integration: MCP, coding agents
+
+**"Personal Assistant"**
+— Multi-channel: WhatsApp, Telegram, Discord
+— Proactive nudges: cron + heartbeat
+
+</div>
+<div class="col">
+
+#### ⚠️ Gaps Remaining
+
+**Accountability**
+— No audit trails or SLAs yet
+
+**Multimodal**
+— TTS/voice exists, UX maturing
+
+**Non-technical onboarding**
+— Setup requires dev skills
+
+**Enterprise compliance**
+— No certifications yet
+
+</div>
+</div>
+
+> **Plus viral factor:** 180x efficiency claims, open source, community momentum (HN, Reddit, X, TikTok)
+
+---
+
+<!-- _class: compact -->
+
+## OpenClaw vs. The Competition
+
+![bg right:30% opacity:0.25](references/digital-employee.png)
+
+### How it stacks up on the needs that matter
+
+| Need | OpenClaw | Claude Code | Manus AI |
+|------|----------|-------------|----------|
+| **Persistent context** | ✅ File-backed memory | ❌ Session only | ⚠️ Cloud-stored |
+| **Real tool execution** | ✅ Full filesystem + shell | ✅ Local sandbox | ❌ Cloud only |
+| **Always-on access** | ✅ 24/7 self-hosted | ❌ Manual launch | ⚠️ Limited |
+| **Trust & control** | ✅ Your server, your rules | ⚠️ Desktop app | ❌ Vendor cloud |
+| **Multi-channel** | ✅ WhatsApp, Telegram, Discord, Slack | ❌ None | ❌ Chat only |
+| **Proactive nudges** | ✅ Cron + heartbeat | ❌ None | ❌ None |
+| **Open source** | ✅ Full transparency | ❌ Proprietary | ❌ Proprietary |
+| **Cost model** | API usage only | $100-200/mo | Subscription |
+
+---
+
+## Relationship with Claude Code
+
+```
+┌──────────────────────────────────────────────────────────┐
+│                     OpenClaw Gateway                     │
+│  ┌────────────────────────────────────────────────────┐  │
+│  │                   Coding Agent Skill               │  │
+│  │  ┌──────────┐ ┌──────────┐ ┌──────────┐ ┌────────┐ │  │
+│  │  │  Codex   │ │  Claude  │ │ OpenCode │ │   Pi   │ │  │
+│  │  │ (OpenAI) │ │   Code   │ │          │ │        │ │  │
+│  │  └──────────┘ └──────────┘ └──────────┘ └────────┘ │  │
+│  └────────────────────────────────────────────────────┘  │
+└──────────────────────────────────────────────────────────┘
+```
+
+OpenClaw can **orchestrate** Claude Code as one of its coding tools:
+- Code generation, review, debugging, refactoring
+- Uses `claude` CLI as a background process
+- Choice of AI coding tools per task
 
 ---
 
@@ -218,110 +373,6 @@ The lobster represents:
 
 ---
 
-# What Makes OpenClaw Unique
-
----
-
-<!-- _class: compact -->
-
-![bg right:40% opacity:0.5](references/digital-employee.png)
-
-## The "Digital Employee" Philosophy
-
-What makes OpenClaw feel like a colleague, not a chatbot:
-
-### 1. Persistent Memory
-- Remembers conversations across sessions
-- Recalls your preferences and past requests
-- Builds context over time
-
-### 2. Local Privilege
-- Full filesystem access (with permissions)
-- Can execute shell commands
-- Integrates with local tools and services
-
-### 3. Real Agentic Behavior
-- Works until objective is complete
-- Breaks complex tasks into steps
-- Makes autonomous decisions
-
----
-## Why OpenClaw Became Popular
-
-<!-- _class: compact -->
-
-![bg right:30% opacity:0.25](references/digital-employee.png)
-### The Perfect Storm
-
-1. **180x Efficiency Claims** — Viral demos showing massive productivity gains
-2. **"It Just Keeps Working"** — Unlike chat, it continues until done
-3. **Community Enthusiasm** — Hacker News, Reddit, X/Twitter, TikTok
-4. **Open Source** — Full transparency, community contributions
-5. **Developer First** — Built by developers, for developers
-6. **Multi-Platform** — Works where your team already communicates
-
-### OpenClaw vs. The Competition
-
-| Feature | OpenClaw | Claude Code | Manus AI |
-|---------|----------|-------------|----------|
-| **Hosting** | Self-hosted | Desktop app | Cloud |
-| **Data Sovereignty** | 100% yours | Local | Cloud |
-| **24/7 Operation** | Yes | Manual | Limited |
-| **Multi-Channel** | Telegram, WhatsApp, Discord, Slack | None | Chat only |
-| **Persistent Memory** | Yes | Session-based | Cloud-stored |
-| **Open Source** | Yes | No | No |
-| **Cost Model** | API usage only | $100-200/mo | Subscription |
-
----
-
-## Relationship with Claude Code
-
-```
-┌──────────────────────────────────────────────────────────┐
-│                     OpenClaw Gateway                     │
-│  ┌────────────────────────────────────────────────────┐  │
-│  │                   Coding Agent Skill               │  │
-│  │  ┌──────────┐ ┌──────────┐ ┌──────────┐ ┌────────┐ │  │
-│  │  │  Codex   │ │  Claude  │ │ OpenCode │ │   Pi   │ │  │
-│  │  │ (OpenAI) │ │   Code   │ │          │ │        │ │  │
-│  │  └──────────┘ └──────────┘ └──────────┘ └────────┘ │  │
-│  └────────────────────────────────────────────────────┘  │
-└──────────────────────────────────────────────────────────┘
-```
-
-OpenClaw can **orchestrate** Claude Code as one of its coding tools:
-- Code generation, review, debugging, refactoring
-- Uses `claude` CLI as a background process
-- Choice of AI coding tools per task
-
----
-
-<!-- _class: hidden -->
-
-## How OpenClaw Inspired Claude Cowork
-
-### The Pattern Anthropic Noticed
-
-Users were adapting **Claude Code** (developer tool) for non-technical tasks:
-- Vacation research
-- Expense management
-- File organization
-
-### Anthropic's Response: Claude Cowork (Jan 2026)
-
-
-> "Claude Code for the rest of your work"
-
-| Feature | OpenClaw | Claude Cowork |
-|---------|----------|---------------|
-| Released | Nov 2025 | Jan 2026 |
-| Approach | Gateway + Skills | Desktop Agent |
-| File Operations | Yes | Yes |
-| Multi-channel | Yes | No |
-| Self-hosted | Yes | No |
-
----
-
 
 
 # A Day with Your AI Assistant
@@ -332,16 +383,16 @@ Users were adapting **Claude Code** (developer tool) for non-technical tasks:
 
 ## How OpenClaw Fits Your Day
 
-| Time | What the Assistant Does | Category |
-|------|------------------------|----------|
-| 8:00 AM | Morning brief: top AI/tech news to WhatsApp | Stay Informed |
-| 9:00 AM | Read & summarize emails, extract action items | Work Smarter |
-| 10:00 AM | Research a topic, compare options, recommend | Think Deeper |
-| 2:00 PM | Write code, review PRs, debug issues | Build & Ship |
-| 3:00 PM | Create content: notes, pages, audio files | Create & Share |
-| 5:00 PM | Server config, deployment, file management | Operate & Maintain |
-| Anytime | Multi-channel messaging across platforms | Stay Connected |
-| 24/7 | Scheduled tasks, monitoring, self-healing | Always On |
+| Time | What the Assistant Does | Category | Role |
+|------|------------------------|----------|------|
+| 8:00 AM | Morning brief: top AI/tech news to WhatsApp | Stay Informed | PA |
+| 9:00 AM | Read & summarize emails, extract action items | Work Smarter | DE |
+| 10:00 AM | Research a topic, compare options, recommend | Think Deeper | Both |
+| 2:00 PM | Write code, review PRs, debug issues | Build & Ship | DE |
+| 3:00 PM | Create content: notes, pages, audio files | Create & Share | Both |
+| 5:00 PM | Server config, deployment, file management | Operate & Maintain | DE |
+| Anytime | Multi-channel messaging across platforms | Stay Connected | PA |
+| 24/7 | Scheduled tasks, monitoring, self-healing | Always On | Both |
 
 ---
 
@@ -552,70 +603,91 @@ OpenClaw handled:
 
 ## Architecture Overview
 
-<div class="cols cols-70-30">
-<div class="col col-left">
-
-### High-Level Architecture
-
-```
-┌────────────────────────────────┐
-│      OpenClaw Gateway          │
-├────────────────────────────────┤
-│ Control UI │ Agent  │ Skills   │
-│ (Web)      │ Runtime│ Engine   │
-└────────────────────────────────┘
-              │
-    ┌─────────┼─────────┐
-    ▼         ▼         ▼
-┌───────┐ ┌───────┐ ┌───────┐
-│Telegr.│ │Discord│ │ Slack │
-└───────┘ └───────┘ └───────┘
-    │         │         │
-    └─────────┼─────────┘
-              ▼
-      ┌─────────────┐
-      │ Claude API  │
-      └─────────────┘
-```
-
-</div>
-<div class="col col-right">
+<div class="cols">
+<div class="col">
 
 ### Key Components
 
 | Component | Purpose |
 |-----------|---------|
-| **Gateway** | Routes messages, manages sessions |
-| **Control UI** | Web-based admin dashboard |
-| **Agent Runtime** | Claude Opus 4.5 / LLM brain |
-| **Skills Engine** | 50+ extensible modules |
-| **Device Pairing** | Explicit approval per device |
-| **Channels** | Multi-platform messaging |
+| **Gateway** | Routes events, sessions, config; hosts Control UI / WebChat / Canvas; cron + webhooks |
+| **Channels** | WhatsApp / Telegram / Slack / Discord adapters feeding into Gateway |
+| **Agent Runtime (Pi)** | Executes agent loop via RPC; streams tool calls and outputs |
+| **Models** | Primary + fallback providers (Anthropic, OpenAI, etc.) |
+| **Skills + Plugins** | AgentSkills folders (bundled / managed / workspace); ClawHub registry |
+| **Identity & Access** | DM policy (pairing / allowlist / open), group allowlists, command auth gates |
+
+</div>
+<div class="col">
+
+### High-Level Architecture
+
+```
+WhatsApp / Telegram / Slack / …
+              │
+              ▼
+  ┌─────────────────────┐
+  │  Gateway (WS ctrl)  │
+  │ sessions · presence │
+  │ cron · webhooks     │
+  │ Control UI · Canvas │
+  └─────────┬───────────┘
+            │ RPC
+            ▼
+  ┌──────────────┐      ┌────────────┐
+  │ Agent Runtime│-- >  │   Model    │
+  │    (Pi)      │      │ providers  │
+  └──────┬───────┘      └────────────┘
+         ▼
+  Tools / Skills / Plugins
+```
 
 </div>
 </div>
 
 ---
 
-![bg right:40% contain](./icons/openclaw_skills.png)
+<!-- _class: compact -->
 
-## Skills System
+## Capability Surfaces
 
-### Built-in Skills (50+)
+<div class="cols">
+<div class="col">
 
-| Category | Skills |
-|----------|--------|
-| **Communication** | WhatsApp, Telegram, iMessage, Discord, Slack |
-| **Productivity** | Calendar, Notes, Tasks, Email |
-| **Development** | GitHub, Coding Agent, Code Review |
-| **Media** | TTS, Image Generation, Video |
-| **Automation** | RSS Feeds, Browser Control, File Management |
-| **Integration** | Notion, camsnap (RTSP cameras) |
+| Surface | Covers |
+|---------|--------|
+| **Channels** | WhatsApp, Telegram, Discord, Slack, Signal, iMessage, Teams, WebChat + plugins |
+| **Core Tools** | browser, canvas, nodes, cron, exec, apply_patch, web_search/fetch |
+| **Skills** | AgentSkills folders (bundled + managed + workspace); env-gated |
+| **Media** | Understand: image/audio/video; Create: TTS, image gen |
+| **Ecosystem** | ClawHub + plugins; review third-party as code |
 
-### Extensibility
-- ClawdHub: Skills marketplace
-- Custom skill development
-- Community contributions
+</div>
+<div class="col">
+
+![w:25%](./icons/openclaw_skills.png) **Skill Categories (by domain)**
+
+<div style="font-size: 16px; display: flex; gap: 12px;">
+<div>
+
+- **Communication** → chat, email
+- **Productivity** → calendar, tasks, notes
+- **Knowledge & Search** → RAG, wiki, KB
+- **Dev & DevOps** → repos, CI/CD
+
+</div>
+<div>
+
+- **Data & Analytics** → BI, metrics
+- **IT Ops / Observability** → alerts, logs
+- **Media** → TTS, image gen
+- **Commerce** → orders, pricing
+
+</div>
+</div>
+
+</div>
+</div>
 
 ---
 
@@ -675,26 +747,36 @@ Even `sudo echo "hi"` fails
 
 ---
 
-<div class="cols cols">
+<div class="cols cols-70-30">
 <div class="col col-left">
 
 ## Deployment Architecture
 
 ```
-┌──────────────────────────────────────────────────────────┐
-│                    AliCloud (US Region)                  │
-│  ┌────────────────────────────────────────────────────┐  │
-│  │         Lightweight Application Server             │  │
-│  │  ┌──────────────────────────────────────────────┐  │  │
-│  │  │  Docker Container                            │  │  │
-│  │  │  ┌──────────────┐  ┌───────────────────┐     │  │  │
-│  │  │  │   OpenClaw   │  │   Caddy (Proxy)   │     │  │  │
-│  │  │  │   Gateway    │  │   + HTTPS         │     │  │  │
-│  │  │  └──────────────┘  └───────────────────┘     │  │  │
-│  │  └──────────────────────────────────────────────┘  │  │
-│  └────────────────────────────────────────────────────┘  │
-└──────────────────────────────────────────────────────────┘
+┌────────────────────────────────────────────────────────┐
+│                    AliCloud (US Region)                │
+│  ┌──────────────────────────────────────────────────┐  │
+│  │         Lightweight Application Server           │  │
+│  │   ┌──────────────┐  ┌───────────────────┐        │  │
+│  │   │   OpenClaw   │  │   Caddy (Proxy)   │        │  │
+│  │   │   Gateway    │  │   + HTTPS         │        │  │
+│  │   └──────────────┘  └───────────────────┘        │  │
+|  |                                                  |  |
+│  └──────────────────────────────────────────────────┘  │
+└────────────────────────────────────────────────────────┘
 ```
+
+### My Configuration
+<!-- _class: compact -->
+
+- Lightweight Application Server
+- Alibaba Cloud Linux 3
+- Caddy as reverse proxy with auto-HTTPS
+- Agent default model: minimax/MiniMax-M2.1 (coding plan)
+- Persistent storage for memory
+- Memory Search mode: 
+  local hf:ggml-org/embeddinggemma-300M-GGUF
+
 </div>
 
 <div class="col col-right">
@@ -705,19 +787,12 @@ Even `sudo echo "hi"` fails
 
 | Factor | Reason |
 |--------|--------|
-| **Latency** | Closer to Anthropic API servers |
+| **Latency** | Closer to Anthropic (and other US) API servers |
 | **Cost** | Lightweight server: ~$5-10/month |
 | **Availability** | 24/7 uptime for always-on agent |
 | **Flexibility** | Full root access for customization |
 | **Region** | US for API performance |
 
-### My Configuration
-
-- Lightweight Application Server
-- CentOS / Rocky Linux
-- Docker for containerization
-- Caddy as reverse proxy with auto-HTTPS
-- Persistent storage for memory
 </div>
 </div>
 
@@ -734,6 +809,10 @@ Even `sudo echo "hi"` fails
 | Filesystem Permissions | ✅ | Strict permissions for sensitive data |
 | OAuth Authentication | ✅ | OAuth for locally hosted pages |
 | Local Embedding Model | ✅ | Using local LLM for embeddings |
+
+---
+
+# Security! Security! Security!
 
 ---
 
