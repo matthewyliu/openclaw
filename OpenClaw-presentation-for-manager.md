@@ -385,13 +385,13 @@ The lobster represents:
 
 | Time | What the Assistant Does | Category | Role |
 |------|------------------------|----------|------|
-| 8:00 AM | Morning brief: top AI/tech news to WhatsApp | Stay Informed | PA |
-| 9:00 AM | Read & summarize emails, extract action items | Work Smarter | DE |
+| 8:00 AM | Morning brief: top AI/tech news to WhatsApp | Stay Informed | Personal Assistant |
+| 9:00 AM | Read & summarize emails, extract action items | Work Smarter | Digital Employee |
 | 10:00 AM | Research a topic, compare options, recommend | Think Deeper | Both |
-| 2:00 PM | Write code, review PRs, debug issues | Build & Ship | DE |
+| 2:00 PM | Write code, review PRs, debug issues | Build & Ship | Digital Employee |
 | 3:00 PM | Create content: notes, pages, audio files | Create & Share | Both |
-| 5:00 PM | Server config, deployment, file management | Operate & Maintain | DE |
-| Anytime | Multi-channel messaging across platforms | Stay Connected | PA |
+| 5:00 PM | Server config, deployment, file management | Operate & Maintain | Digital Employee |
+| Anytime | Multi-channel messaging across platforms | Stay Connected | Personal Assistant |
 | 24/7 | Scheduled tasks, monitoring, self-healing | Always On | Both |
 
 ---
@@ -454,7 +454,7 @@ The lobster represents:
 <div class="cols cols-70-30">
 <div class="col col-left">
 
-### Camera Recommendation (Chinese)
+### 3a. Camera Recommendation (Chinese)
 
 Asked: *"Recommend RTSP/ONVIF cameras for home"*
 
@@ -472,6 +472,31 @@ Asked: *"Recommend RTSP/ONVIF cameras for home"*
 **Online case:** Personal finance — query hledger via text: *"How much on food last month?"* gets instant answer from thousands of transactions
 
 ![w:240](./screen%20captures/Screenshot%202026-02-03%20at%2022.32.56.png)
+
+</div>
+</div>
+
+---
+
+## 3. Think Deeper: Research & Recommend
+
+<!-- _class: compact -->
+
+<div class="cols cols-70-30">
+<div class="col col-left">
+
+### 3b. EBC Trek Planning — from PDF to interactive pages
+
+Submitted a travel agency PDF → OpenClaw created three interactive pages:
+
+- [Kathmandu & EBC Trek Plan — itinerary + interactive map](https://openclaw.mliu.cc:8443/ebc-kathmandu-plan.html)
+- [Voice Coach — practice Nepali & English pronunciation](https://openclaw.mliu.cc:8443/ebc-voice-coach.html)
+- [Nepal English Practice — resources to get conversation-ready](https://openclaw.mliu.cc:8443/ebc-nepal-english.html)
+
+</div>
+<div class="col col-right side-note">
+
+![w:280](./screen%20captures/ebc-trek-plan.png)
 
 </div>
 </div>
@@ -580,6 +605,9 @@ OpenClaw handled:
 
 <!-- _class: compact -->
 
+<div class="cols cols-70-30">
+<div class="col col-left">
+
 | Channel | What OpenClaw Does |
 |---------|-------------------|
 | ![w:24](./icons/whatsapp.svg) **WhatsApp** | Daily briefs, voice messages, research replies |
@@ -591,7 +619,13 @@ OpenClaw handled:
 
 > All from one agent. One conversation context. Persistent memory across channels.
 
+</div>
+<div class="col col-right side-note">
+
 **Online case:** Linear integration — view weekly tasks, create & update assignments, all via Telegram
+
+</div>
+</div>
 
 ---
 
